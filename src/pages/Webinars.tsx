@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, Monitor, User, Video, CheckCircle, VideoOff } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -160,13 +161,21 @@ const Webinars = () => {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-center max-w-3xl mx-auto"
                     >
-                        <span className="badge-fashion mb-4 inline-block">Webinar Dashboard</span>
+                        <span className="badge-fashion mb-4 inline-block">Webinar Access</span>
                         <h1 className="font-display text-4xl md:text-5xl text-foreground mb-6">
                             Views your registered webinars
                         </h1>
-                        <p className="text-muted-foreground text-lg">
+                        <p className="text-muted-foreground text-lg mb-8">
                             View your registered webinars and join live sessions when they start
                         </p>
+
+                        <div className="flex justify-center">
+                            <Button asChild variant="default" size="lg" className="bg-fashion-charcoal text-white hover:bg-black">
+                                <Link to="/login">
+                                    Go to Dashboard
+                                </Link>
+                            </Button>
+                        </div>
                     </motion.div>
                 </div>
             </section>
