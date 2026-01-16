@@ -10,7 +10,6 @@ const navLinks = [
   { name: 'Portfolio', path: '/portfolio' },
   { name: 'Courses', path: '/courses' },
   { name: 'Webinars', path: '/webinars' },
-  { name: 'Policies', path: '/policies' },
 ];
 
 const Navbar = () => {
@@ -33,8 +32,8 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? 'bg-background/95 backdrop-blur-md shadow-sm'
-          : 'bg-transparent'
+        ? 'bg-background/95 backdrop-blur-md shadow-sm'
+        : 'bg-transparent'
         }`}
     >
       <div className="container-custom mx-auto px-4 md:px-8">
@@ -55,8 +54,8 @@ const Navbar = () => {
                 key={link.path}
                 to={link.path}
                 className={`text-sm font-medium tracking-wide uppercase transition-colors duration-200 ${location.pathname === link.path
-                    ? 'text-primary'
-                    : 'text-foreground/80 hover:text-primary'
+                  ? 'text-primary'
+                  : 'text-foreground/80 hover:text-primary'
                   }`}
               >
                 {link.name}
@@ -94,8 +93,8 @@ const Navbar = () => {
                   key={link.path}
                   to={link.path}
                   className={`text-base font-medium py-2 ${location.pathname === link.path
-                      ? 'text-primary'
-                      : 'text-foreground/80'
+                    ? 'text-primary'
+                    : 'text-foreground/80'
                     }`}
                 >
                   {link.name}
