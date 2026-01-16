@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Elegant Fashion Institute Color Palette */
+    --background: 30 20% 98%;
+    --foreground: 0 0% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
+
+    /* Elegant Rose Pink - Primary Brand Color */
+    --primary: 350 45% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Soft Blush - Secondary */
+    --secondary: 350 30% 96%;
+    --secondary-foreground: 350 45% 35%;
+
+    /* Muted Cream */
+    --muted: 35 25% 95%;
+    --muted-foreground: 0 0% 40%;
+
+    /* Gold Accent */
+    --accent: 42 75% 55%;
+    --accent-foreground: 0 0% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 350 45% 45%;
+
+    --radius: 0.5rem;
+
+    /* Custom Fashion Colors */
+    --fashion-pink: 350 45% 45%;
+    --fashion-pink-light: 350 40% 90%;
+    --fashion-gold: 42 75% 55%;
+    --fashion-gold-light: 42 60% 85%;
+    --fashion-cream: 35 30% 97%;
+    --fashion-charcoal: 0 0% 15%;
+    --fashion-rose: 350 35% 75%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(350 45% 45%) 0%, hsl(42 75% 55%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(35 25% 98%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(350 45% 40%) 0%, hsl(350 50% 55%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(0 0% 0% / 0.08);
+    --shadow-elegant: 0 8px 30px -4px hsl(350 45% 45% / 0.15);
+    --shadow-card: 0 2px 12px -2px hsl(0 0% 0% / 0.06);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 6%;
+    --foreground: 30 20% 95%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 30 20% 95%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 30 20% 95%;
+
+    --primary: 350 45% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 350 20% 15%;
+    --secondary-foreground: 350 30% 85%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 42 65% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 350 45% 60%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 md:py-24 px-4 md:px-8;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-hero);
+  }
+
+  .card-elegant {
+    @apply bg-card rounded-lg border border-border;
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-elevated {
+    @apply bg-card rounded-xl border border-border transition-all duration-300;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .card-elevated:hover {
+    box-shadow: var(--shadow-elegant);
+    transform: translateY(-4px);
+  }
+
+  .btn-fashion {
+    @apply inline-flex items-center justify-center rounded-md font-medium transition-all duration-300;
+    @apply px-8 py-3 text-sm tracking-wide uppercase;
+  }
+
+  .btn-primary-fashion {
+    @apply btn-fashion bg-primary text-primary-foreground;
+    @apply hover:opacity-90 hover:shadow-lg;
+  }
+
+  .btn-outline-fashion {
+    @apply btn-fashion border-2 border-primary text-primary bg-transparent;
+    @apply hover:bg-primary hover:text-primary-foreground;
+  }
+
+  .btn-gold {
+    @apply btn-fashion bg-accent text-accent-foreground;
+    @apply hover:opacity-90 hover:shadow-lg;
+  }
+
+  .input-fashion {
+    @apply w-full px-4 py-3 rounded-md border border-border bg-background;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary;
+    @apply transition-all duration-200;
+  }
+
+  .label-fashion {
+    @apply block text-sm font-medium text-foreground mb-2;
+  }
+
+  .divider-elegant {
+    @apply w-20 h-0.5 bg-accent mx-auto;
+  }
+
+  .badge-fashion {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+    @apply bg-secondary text-secondary-foreground;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  .hover-glow {
+    @apply transition-shadow duration-300;
+  }
+
+  .hover-glow:hover {
+    box-shadow: var(--shadow-elegant);
+  }
+}
