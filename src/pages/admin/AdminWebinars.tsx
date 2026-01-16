@@ -60,9 +60,9 @@ const AdminWebinars = () => {
                                     <td className="px-6 py-4 text-gray-600">{webinar.trainer}</td>
                                     <td className="px-6 py-4">
                                         <span className={`px-2.5 py-0.5 rounded text-xs font-semibold ${webinar.status === 'Live' ? 'bg-red-100 text-red-700' :
-                                                webinar.status === 'Upcoming' ? 'bg-orange-100 text-orange-700' :
-                                                    webinar.status === 'Completed' ? 'bg-gray-100 text-gray-600' :
-                                                        'bg-gray-100 text-gray-600'
+                                            webinar.status === 'Upcoming' ? 'bg-orange-100 text-orange-700' :
+                                                webinar.status === 'Completed' ? 'bg-gray-100 text-gray-600' :
+                                                    'bg-gray-100 text-gray-600'
                                             }`}>
                                             {webinar.status}
                                         </span>
